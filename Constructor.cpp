@@ -98,4 +98,25 @@ int main() {
     Petugas* petugas1 = new Petugas("Budi", 201, "Level 1");
     Admin* admin1 = new Admin();
 
-    
+    buku1->infoBuku();
+    peminjam1->infoPeminjam();
+
+    petugas1->prosesPinjam(buku1, peminjam1);
+    buku1->infoBuku();
+    peminjam1->infoPeminjam();
+
+    admin1->ubahAkses(petugas1, "Level 2");
+
+    aksesTerbatas(admin1, buku1);
+    aksesTerbatas(admin1, peminjam1);
+
+    petugas1->prosesKembali(buku1);
+    buku1->infoBuku();
+
+    delete buku1;
+    delete peminjam1;
+    delete petugas1;
+    delete admin1;
+
+    return 0;
+}
