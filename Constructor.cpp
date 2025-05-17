@@ -92,3 +92,10 @@ void aksesTerbatas(Admin* a, Peminjam* p) {
     cout << "[Admin Akses Terbatas] Total Pinjaman: " << p->totalPinjaman << endl;
 }
 
+int main() {
+    Buku* buku1 = new Buku("Clean Code", "Robert C. Martin");
+    Peminjam* peminjam1 = new Peminjam("Andi", 101);
+    Petugas* petugas1 = new Petugas("Budi", 201, "Level 1");
+    Admin* admin1 = new Admin();
+
+    
