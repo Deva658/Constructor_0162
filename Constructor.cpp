@@ -20,7 +20,7 @@ public:
     }
 
     friend class Petugas;
-    friend void aksesTerbatas(Admin* a, Buku* b); // hanya untuk melihat info
+    friend void aksesTerbatas(Admin* a, Buku* b);
 };
 
 class Peminjam {
@@ -38,7 +38,7 @@ public:
     }
 
     friend class Petugas;
-    friend void aksesTerbatas(Admin* a, Peminjam* p); // hanya untuk melihat info
+    friend void aksesTerbatas(Admin* a, Peminjam* p);
 };
 
 class Petugas {
@@ -71,3 +71,11 @@ public:
 
     friend class Admin;
 };
+
+class Admin {
+public:
+    void ubahAkses(Petugas* p, string aksesBaru) {
+        p->levelAkses = aksesBaru;
+        cout << "Level akses petugas diubah menjadi: " << aksesBaru << endl;
+    }
+
