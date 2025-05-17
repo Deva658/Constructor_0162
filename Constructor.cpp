@@ -79,3 +79,16 @@ public:
         cout << "Level akses petugas diubah menjadi: " << aksesBaru << endl;
     }
 
+    friend void aksesTerbatas(Admin* a, Buku* b);
+    friend void aksesTerbatas(Admin* a, Peminjam* p);
+};
+
+void aksesTerbatas(Admin* a, Buku* b) {
+    cout << "[Admin Akses Terbatas] Status Buku: " 
+         << (b->dipinjam ? "Dipinjam" : "Tersedia") << endl;
+}
+
+void aksesTerbatas(Admin* a, Peminjam* p) {
+    cout << "[Admin Akses Terbatas] Total Pinjaman: " << p->totalPinjaman << endl;
+}
+
